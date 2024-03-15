@@ -1,0 +1,21 @@
+.userProfile {
+	display: flex;
+	align-items: center;
+	color: #DCD8D3;
+	& img {
+		border-radius: 50px;
+	}
+	.shortInfo {
+		padding-left: 20px;
+		white-space: nowrap; /* запрещаем перенос текста */
+  	overflow: hidden; /* скрываем часть текста */
+  	text-overflow:ellipsis; /* добавляем троеточие в конце */
+		& h1 {
+			font-size: 1.4rem;
+			line-height: 40px;
+		}
+		& p {
+			font-size: 1.1em;
+		}
+	}
+}

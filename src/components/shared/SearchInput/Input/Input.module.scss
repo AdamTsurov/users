@@ -1,0 +1,19 @@
+.input {
+	display: flex;
+	box-sizing:border-box;
+	align-items: center;
+	
+}
+
+.input input{
+	padding:  10px 0px 10px 20px;
+	background-color: #1E2027;
+	color: #8C8988;
+	font-size: 1.2em;
+	font-family:Jura;
+	width: 300px;
+	height: 45px;
+	border: 0;
+	outline: 0;
+	border-radius: 20px;
+}

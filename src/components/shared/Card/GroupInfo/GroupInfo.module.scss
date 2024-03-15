@@ -1,0 +1,28 @@
+.groupInfo {
+	white-space: nowrap;
+  overflow: hidden; 
+  text-overflow:ellipsis; 
+	font-size: 1em;
+	height: 96px;
+	margin-top: 12px;
+	.phone span, .birthday span, .address span{
+		margin-left: 20px;
+		color: #DCD8D3;
+	}
+
+	.phone , .birthday , .address {
+		line-height: 30px;
+		font-size: 0.9em;
+		color: #8C8988;
+	}
+
+	.phone{
+		
+	}
+	.birthday {
+
+	}
+	.address {
+
+	}
+}

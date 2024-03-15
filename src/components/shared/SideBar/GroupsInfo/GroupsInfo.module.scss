@@ -1,0 +1,30 @@
+.groupsInfo {
+	position: relative;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: #DCD8D3;
+	&::after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: #303238;
+	}
+	h2 {
+		padding-bottom: 15px;
+	}
+	.groups {
+		width: 150px;
+		& p {
+			display: flex;
+			justify-content: space-between;
+			color: #8C8988;
+			line-height: 30px;
+			span {
+				color: #DCD8D3;
+			}
+		}
+	}
+}

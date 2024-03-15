@@ -1,0 +1,17 @@
+.sideBar {
+	min-width: 332px;
+	height: 824px;
+	background-color: #1E2027;
+	border-radius: 20px;
+	padding: 25px;
+	box-sizing: border-box;
+	& *{
+		font-family: Jura;
+	}
+	h1 {
+		color: #DCD8D3;
+		font-size: 20px;
+		font-weight:lighter;
+		padding-bottom: 20px;
+	}
+}

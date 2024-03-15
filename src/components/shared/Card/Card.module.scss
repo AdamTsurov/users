@@ -1,0 +1,21 @@
+.card {
+	background-color: white;
+	border-radius: 20px;
+	padding: 20px;
+	background-color: #1A1C23;
+	box-sizing: border-box;
+	&:hover {
+		border:0.2px solid #60483e;
+	}
+	position: relative;
+	.deleteButton {
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		background-color: white;
+		right: 0;
+	}
+}
+.card * {
+	font-family:Jura;
+}
