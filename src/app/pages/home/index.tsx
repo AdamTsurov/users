@@ -1,26 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./Home.module.scss";
 import Header from "../../../components/shared/Header";
 import Container from "../../../components/shared/Container";
-import { getUsersInfo } from "../../../api";
-import { useGetUsers } from "../../../utils/getUsers";
+import { IUser, useGetUsers } from "../../../utils/getUsers";
 
 export const UserContext = React.createContext("");
 
+interface IUserContext {
+  users: IUser[];
+  refreshData: (count: number) => void;
+  SearchUsers: (query: string) => void;
+  DeleteUsers: (username: string) => void;
+}
+
 const Home = () => {
-  const {users, refreshData} = useGetUsers();
-	
-
-  const deleteUser = async () => {};
-
-  const SearchUser = () => {};
+  const { users, refreshData, SearchUsers, DeleteUsers } =
+    useGetUsers() as IUserContext;
 
   return (
     <UserContext.Provider
       value={{
         users,
         refreshData,
-        deleteUser,
+        SearchUsers,
+        DeleteUsers,
       }}
     >
       <div className={style.home}>

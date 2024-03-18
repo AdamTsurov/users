@@ -11,7 +11,7 @@ const SideBar = () => {
 
   return (
     <div className={style.sideBar}>
-      <h1>{`${users.length.toString().toUpperCase()} Users`}</h1>
+      <h1>{`${users?.length.toString().toUpperCase()} Users`}</h1>
       <GroupsInfo
         nameGroup={"Age"}
         groupsCount={"5"}

@@ -8,27 +8,29 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
 	grid-template-rows: repeat(4, 196);
-	gap:20px;
+	grid-auto-rows: 196px;
+	grid-column-gap: 20px;
+  grid-row-gap: 30px;
 	padding-right: 10px;
 }
 
 .cardsContainer::-webkit-scrollbar {
-  width: 4px;               /* ширина всей полосы прокрутки */
+  width: 4px;
 	background-color: #27292F;
 	padding-left: 5px;
 	padding-right: 510px;
-  border-radius: 30px;       /* округлось бегунка */
+  border-radius: 30px; 
 	border: 1.2px solid black;
 }
 
 .cardsContainery::-webkit-scrollbar-track {
-  background: rgb(255, 255, 255);        /* цвет зоны отслеживания */
+  background: rgb(255, 255, 255); 
 	height: 50px;
 }
 
 .cardsContainer::-webkit-scrollbar-thumb {
-  background-color: #7a7a7a;    /* цвет бегунка */
-  border-radius: 30px;       /* округлось бегунка */
+  background-color: #7a7a7a; 
+  border-radius: 30px;
 }
 
 .p {

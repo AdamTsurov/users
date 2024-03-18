@@ -2,8 +2,9 @@ import { useState } from "react";
 import { getUsersInfo } from "../api";
 import { setLocalStorageData } from "./setLocalStorageData";
 import { getDataForLocalStorage } from "./getDataForLocalStorage";
+import { getDate } from "./getDate";
 
-interface IUser {
+export interface IUser {
   userList: [];
 }
 
@@ -13,8 +14,6 @@ export const useGetUsers = () => {
   const getUsers = async (count: number = 500) => {
     try {
       let userList: IUser = await getUsersInfo(count);
-			console.log();
-			
       return userList;
     } catch (error) {
       return [];
@@ -27,20 +26,27 @@ export const useGetUsers = () => {
     setUsers(users);
   };
 
-	const DeleteUsers = (login) => {
-		let newData = users.filter(user=> user?.username !== login?.username)
-		setUsers(newData)
-	}
-
-  const SearhUsers = (type) => {
-    switch (type) {
-      case value:
-        break;
-
-      default:
-        return users;
-    }
+  const DeleteUsers = (username: string) => {
+    let newData  = users.filter((user) => user?.login?.username !== username);
+    setLocalStorageData(newData);
+    setUsers(newData);
   };
 
-  return {users, DeleteUsers, SearhUsers,refreshData};
+  const SearchUsers = (query: string) => {
+    query = query.toLowerCase();
+    let filterUsers = getDataForLocalStorage();
+    let userSearch = filterUsers?.filter((user) => {
+      let { day, month, year } = getDate(user?.dob?.date);
+      return (
+        user?.name?.first.toLowerCase().includes(query) ||
+        user?.email?.toLowerCase().includes(query) ||
+        user?.phone?.toLowerCase().includes(query) ||
+        `${day} ${month} ${year}`.toLowerCase().includes(query) ||
+        user?.location?.city.toLowerCase().includes(query)
+      );
+    });
+    setUsers(userSearch);
+  };
+
+  return { users, DeleteUsers, SearchUsers, refreshData };
 };
