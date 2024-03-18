@@ -16,6 +16,7 @@ import Home from "./pages/home";
  * - статистика не ломается при поиске
  * - Был использован React Context
  * - debounce в поиске, и в обновлении страницы пользователей
+ * - warningRefreshDataUsers необязателен из за debounce
  */
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
